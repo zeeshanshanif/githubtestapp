@@ -1,0 +1,96 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <br>
+            <h1 class="bg-primary col-sm-12 text-center ">Student Managment System</h1>
+            <form class="form-horizontal"  role="form" ng-submit="add()">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">First Name</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" placeholder="First Name" ng-model="firstName"
+                               required="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{2,15}$">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Last Name:</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" placeholder="Last Name" ng-model="lastName"
+                               required="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{2,15}$">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Roll No:</label>
+
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" min="1" placeholder="Roll Number" ng-model="rollNo"
+                               required="" pattern="[0-9]{3,7}">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Email:</label>
+
+                    <div class="col-sm-9">
+                        <input type="email" class="form-control" placeholder="Email" ng-model="email"
+                               required="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Age:</label>
+
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" min="1" placeholder="Age" ng-model="age"
+                               required="" pattern="[0-9]{1,3}" >
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </form>
+
+            <table class="table table-hover table-bordered col-xs-6">
+                <h1 class="bg-primary col-sm-12 text-center">Students Record</h1>
+                <thead class="bg-primary">
+                <th><strong>Serial</strong></th>
+
+                <th><strong>First Name</strong></th>
+                <th><strong>Last Name</strong></th>
+                <th><strong>Roll No</strong></th>
+                <th><strong>Email</strong></th>
+                <th><strong>Age</strong></th>
+                <th><strong>Action</strong></th>
+
+                </thead>
+                <tbody>
+                <tr><input type="text" ng-model="search.rollNo" placeholder="Search By Roll No" class="pull-right"/>
+                </tr>
+                <tr ng-repeat="(id, name) in person  | filter:search">
+                    <td>{{$index + 1}}</td>
+
+                    <td>{{name.firstName}}</td>
+                    <td>{{name.lastName}}</td>
+                    <td>{{name.rollNo}}</td>
+                    <td>{{name.email}}</td>
+                    <td>{{name.age}}</td>
+                    <td>
+
+                        <!--<md-button class="md-raised md-warn" ng-click="remove($index, user._id)">Delete</md-button>-->
+                        <!--<md-button class="md-raised md-primary" ng-click="edit(user)">Edit</md-button>-->
+                        <button class="btn btn-danger" ng-click="remove(id)">Delete</button>
+                        <a href="#/edit/{{name.$id}}"><button class="btn btn-primary">Edit</button></a>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</section>

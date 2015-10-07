@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+
+    <!--<script src="bower_components/jquery/dist/jquery.js"></script>-->
+    <!--<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+
+    <script src="app.js"></script>
+    <script src="config/student.route.js"></script>
+    <script src="services/student.service.js"></script>
+    <script src="controllers/student.controller.js"></script>
+
+
+
+</head>
+<body>
+<h1 class="bg-primary col-sm-12 text-center "> Firebase+Angularjs+Bootstrap</h1>
+
+    <div ng-view></div>
+
+
+<footer class="container"> <h1 class=" col-sm-12 text-center "> Firebase+Angularjs+Bootstrap</h1></footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <br>
+            <h1 class="bg-primary col-sm-12 text-center ">Student Managment System</h1>
+            <form class="form-horizontal"  role="form" ng-submit="edit()">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">First Name</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" placeholder="First Name" ng-model="person.firstName"
+                               required="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{2,15}$">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Last Name:</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" placeholder="Last Name" ng-model="person.lastName"
+                               required="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{2,15}$">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Roll No:</label>
+
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" min="1" placeholder="Roll Number" ng-model="person.rollNo"
+                               required="" required="" pattern="[0-9]{3,7}" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Email:</label>
+
+                    <div class="col-sm-9">
+                        <input type="email" class="form-control" placeholder="Email" ng-model="person.email"
+                               required="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Age:</label>
+
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" min="1" placeholder="Age" ng-model="person.age"
+                               required="" required="" pattern="[0-9]{1,3}" >
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-danger">Update</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</section>
